@@ -4,13 +4,13 @@
     color-scheme: dark;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --bg: #060b18;
-    --surface: rgba(14, 22, 47, 0.92);
-    --surface-soft: rgba(12, 18, 37, 0.80);
+    --surface:  rgba(14, 22, 47, 0.92);
+    --surface-soft:  rgba(12, 18, 37, 0.80);
     --text: #e8edf8;
     --muted: #94a9c9;
     --accent: #7c5cff;
     --accent-2: #3ef0ff;
-    --border: rgba(255,255,255,0.12);
+    --border:  rgba(255,255,255,0.12);
     --shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
 }
 
@@ -193,7 +193,7 @@ body::before {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
-    transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
+    transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease, background 0.32s ease, color 0.32s ease;
     backdrop-filter: blur(10px);
 }
 
@@ -211,11 +211,15 @@ body::before {
     transform: translateY(-8px);
     box-shadow: 0 38px 90px rgba(0, 0, 0, 0.26);
     border-color: rgba(94, 103, 255, 0.36);
+    background: rgba(62, 96, 175, 0.18);
 }
 
 .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     font-size: 3.1rem;
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
 }
 
 .card h2 {
@@ -322,7 +326,7 @@ body::before {
 }
 
 .mission-logo {
-    width: 120px;
+    width: 140px;
     margin-bottom: 20px;
 }
 
@@ -391,7 +395,7 @@ body::before {
     color: var(--muted);
 }
 
-..contact-card {
+.contact-card {
     width: 100%;
     margin: 0;
     background: transparent;
@@ -524,6 +528,17 @@ button:hover {
     transform: translateX(4px);
 }
 
+.phone-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.phone-numbers span {
+    white-space: nowrap;
+}
+
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
     text-align: center;
@@ -537,8 +552,8 @@ button:hover {
 }
 
 .footer-logo {
-    width: 130px;
-    margin-bottom: 30px;
+    width: 300px;
+    margin-bottom: 300px;
 }
 
 .contact-tagline h1 {
@@ -586,21 +601,24 @@ button:hover {
 
 
 .service-hero {
-    min-height: 72vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 20px;
-    position: relative;
+     min-height:100vh;
+    width:100%;
+
     background:
-        linear-gradient(180deg, rgba(7, 11, 26, 0.92), rgba(12, 19, 38, 0.98)),
-        url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80') top right/400px no-repeat,
-        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') bottom center/cover no-repeat;
-    background-blend-mode: lighten, normal, normal;
-    background-size: auto 320px, cover, cover;
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: top right, bottom center, center;
-    color: var(--text);
+    linear-gradient(
+        rgba(7, 11, 26, 0.72),
+        rgba(12, 19, 38, 0.82)
+    ),
+    url('images/solar/solar1.png');
+
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
 .service-hero::before {
@@ -618,7 +636,7 @@ button:hover {
 }
 
 .service-logo {
-    width: 120px;
+    width: 370px;
     margin-bottom: 28px;
     filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.35));
 }
@@ -644,6 +662,19 @@ button:hover {
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+}
+
+.service-footer {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    padding: 40px 20px 60px;
+    background: rgba(7, 11, 26, 0.9);
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.service-footer .btn {
+    min-width: 120px;
 }
 
 .service-details,
@@ -732,4 +763,170 @@ button:hover {
 .service-hero a,
 .service-hero button {
     min-width: 150px;
+}
+
+.solar-services {
+    padding: 90px 10%;
+    background: rgba(7, 11, 26, 0.92);
+}
+
+.solar-services .solar-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.solar-content h3 {
+    color: #eef2ff;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    margin-bottom: 18px;
+}
+
+.solar-content p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.benefits-list li {
+    padding-left: 28px;
+    position: relative;
+    color: #cbd5e1;
+}
+
+.benefits-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+}
+
+.solar-image img {
+    width: 100%;
+    border-radius: 28px;
+    object-fit: cover;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+}
+
+.solar-products {
+    padding: 90px 10%;
+    background: rgba(3, 8, 22, 0.92);
+}
+
+.solar-products .section-title h2 {
+    font-size: clamp(3.8rem, 5vw, 5.4rem);
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+    transition: transform 0.28s ease, border-color 0.28s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(62, 240, 255, 0.24);
+}
+
+.product-card h3 {
+    color: #eef2ff;
+    margin-bottom: 12px;
+}
+
+.watts {
+    color: var(--accent-2);
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.product-subtitle {
+    color: var(--muted);
+    margin-bottom: 16px;
+    font-size: 0.98rem;
+}
+
+.product-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.product-card ul li {
+    padding-left: 22px;
+    position: relative;
+    color: #cbd5e1;
+}
+
+.product-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+@media (max-width: 900px) {
+    .solar-services .solar-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .solar-services,
+    .solar-products {
+        padding: 70px 6%;
+    }
+}
+
+.solar-title{
+    font-size:50px;
+    font-weight:700;
+}
+
+/* CATEGORY TITLE */
+
+.category-title{
+    font-size:34px;
+    margin-bottom:35px;
+    margin-top:30px;
+    color:#f97316;
+    text-align:center;
+    font-weight:700;
+}
+
+/* CATEGORY SPACING */
+
+.product-category{
+    margin-bottom:70px;
+}
+
+.highlight-logo{
+    font-size:48px;
+    font-weight:800;
+    color:#f97316;
+    letter-spacing:2px;
+    display:block;
+    margin-bottom:10px;
 }
