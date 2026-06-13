@@ -193,20 +193,42 @@ body::before {
 
 .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(150px, 280px));
     gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(2, minmax(140px, 260px));
+    }
+}
+
+.service-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 .card {
     position: relative;
     overflow: hidden;
-    padding: 36px 34px;
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
-    transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease, background 0.32s ease, color 0.32s ease;
-    backdrop-filter: blur(10px);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 18px 14px;
+    border-radius: 16px;
+    background: rgba(10, 20, 50, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
 }
 
 .card::before {
@@ -214,32 +236,81 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent));
+    box-shadow: 0 0 20px rgba(62, 240, 255, 0.5);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(62, 240, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 38px 90px rgba(0, 0, 0, 0.26);
-    border-color: rgba(94, 103, 255, 0.36);
-    background: rgba(62, 96, 175, 0.18);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 50px 100px rgba(62, 240, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border-color: rgba(62, 240, 255, 0.4);
+    background: rgba(15, 30, 80, 0.7);
+}
+
+.card:hover::after {
+    opacity: 1;
 }
 
 .icon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 3.1rem;
-    margin: 0 auto 24px;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .icon {
+    transform: scale(1.15) rotate(5deg);
 }
 
 .card h2 {
-    font-size: 1.7rem;
+    font-size: 0.9rem;
+    font-weight: 700;
     color: #f8fbff;
-    margin-bottom: 18px;
+    margin: 0;
+    letter-spacing: -0.5px;
 }
 
+.arch-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(200, 177, 177, 0.85)), url('images/3AEliteDesignsWithoutBg.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.arch-card:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(200, 177, 177, 0.85)), url('images/3AEliteDesignsWithoutBg.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.sun-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(200, 177, 177, 0.85)), url('images/3AFutureEnergySolutionlogoWithoutBG.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.sun-card:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(200, 177, 177, 0.85)), url('images/3AFutureEnergySolutionlogoWithoutBG.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
 .card p {
     color: var(--muted);
     line-height: 1.85;
@@ -618,10 +689,9 @@ button:hover {
 
     background:
     linear-gradient(
-        rgba(7, 11, 26, 0.72),
-        rgba(12, 19, 38, 0.82)
-    ),
-    url('images/solar/solar1.png');
+        rgba(176, 182, 205, 0.72),
+        rgba(195, 203, 226, 0.82)
+    );
 
     background-position:center;
     background-size:cover;
@@ -637,7 +707,7 @@ button:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(3, 8, 22, 0.45);
+    background: rgba(3, 15, 49, 0.45);
 }
 
 .service-overlay {
@@ -655,14 +725,13 @@ button:hover {
 
 .service-hero h1 {
     font-size: clamp(2.8rem, 5vw, 4.5rem);
-    color: #eef2ff;
     margin-bottom: 18px;
     letter-spacing: 0.1em;
     line-height: 1.05;
 }
 
 .service-hero p {
-    color: var(--muted);
+    color: #f9f7f5;
     font-size: 1.05rem;
     line-height: 1.85;
     max-width: 720px;
