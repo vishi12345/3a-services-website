@@ -424,6 +424,13 @@ body::before {
     background: transparent;
 }
 
+.contact-main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -484,6 +491,64 @@ body::before {
     background: transparent;
     border: none;
     box-shadow: none;
+}
+
+.contact-form-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    padding: 44px 40px;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+}
+
+.contact-form-card:hover {
+    border-color: rgba(62, 240, 255, 0.3);
+    box-shadow: 0 38px 90px rgba(62, 240, 255, 0.15);
+}
+
+.contact-form-card h3 {
+    font-size: 2rem;
+    color: #f8fbff;
+    margin-bottom: 28px;
+    font-weight: 700;
+}
+
+.contact-form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    color: #f8fbff;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form-card input::placeholder,
+.contact-form-card textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+    outline: none;
+    border-color: rgba(62, 240, 255, 0.6);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(62, 240, 255, 0.1);
+}
+
+.contact-form-card textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 .contact-highlight {
@@ -662,6 +727,7 @@ button:hover {
 @media (max-width: 960px) {
     .about-container,
     .contact-container,
+    .contact-main-container,
     .footer-container {
         grid-template-columns: 1fr;
     }
