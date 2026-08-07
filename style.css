@@ -127,13 +127,6 @@ body::before {
     margin-right: auto;
 }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
 .btn {
     padding: 16px 34px;
     border-radius: 999px;
@@ -742,10 +735,6 @@ button:hover {
     .overlay h1 {
         letter-spacing: 0.12em;
     }
-
-    .hero-buttons {
-        gap: 14px;
-    }
 }
 
 
@@ -802,26 +791,6 @@ button:hover {
     line-height: 1.85;
     max-width: 720px;
     margin: 0 auto 32px auto;
-}
-
-.service-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.service-footer {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    padding: 40px 20px 60px;
-    background: rgba(7, 11, 26, 0.9);
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.service-footer .btn {
-    min-width: 120px;
 }
 
 .service-details,
